@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Companies</h1>
+<h1>Compañias</h1>
 
 <table>
   <thead>
@@ -13,8 +13,8 @@
   <tbody>
     <% @companies.each do |company| %>
       <tr>
-        <td><%= company.name %></td>
-        <td><%= link_to 'Show', company %></td>
+        <td><%= link_to company.name, company %></td>
+        <td><%= company.employees.count %></td>    
         <td><%= link_to 'Edit', edit_company_path(company) %></td>
         <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Company', new_company_path %>
+<%= link_to 'Agregar compañia', new_company_path %>
